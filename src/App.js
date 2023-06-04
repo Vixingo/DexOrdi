@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext } from "react";
+import { ThemeProviderWrapper, ThemeContext } from "./ThemeProvider";
+import { Button, Box, Typography, Paper } from "@mui/material";
+import Navbar from "./components/Navbar/Navbar";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import LandingPage from "./pages/LandingPage";
+const App = () => {
+    const { toggleTheme } = useContext(ThemeContext);
+
+    return (
+        <>
+            <BrowserRouter>
+                <Box
+                    sx={{
+                        minHeight: "100vh",
+                        // display: "flex",
+                        // flexDirection: "column",
+                        // justifyContent: "center",
+                        // alignItems: "center",
+                        borderRadius: "0",
+                    }}
+                >
+                    <Navbar />
+                    <Routes>
+                        {" "}
+                        <Route exact path="/" element={<LandingPage />} />
+                    </Routes>
+                </Box>
+            </BrowserRouter>
+        </>
+    );
+};
 
 export default App;
