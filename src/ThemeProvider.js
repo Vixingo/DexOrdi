@@ -14,13 +14,26 @@ export const ThemeProvider = ({ children }) => {
     };
 
     const theme = createTheme({
+        breakpoints: {
+            values: {
+                xs: 0,
+                sm: 600,
+                md: 1024,
+
+                xl: 1660,
+            },
+        },
         palette: {
             mode: themeMode,
             primary: { main: "#6900FF" },
+            secondary: { main: "#373737" },
+
             background: {
                 default: themeMode === "light" ? "" : "#000000",
                 paper: themeMode === "light" ? "#ffffff" : "#1B1B1B",
             },
+            borderColor: themeMode === "light" ? "#ffffff" : "#373737",
+            highL: themeMode === "light" ? "#FFF42C" : "#6900FF",
         },
 
         typography: {
@@ -29,8 +42,8 @@ export const ThemeProvider = ({ children }) => {
                 fontSize: "59px",
                 lineHeight: "120%",
                 fontWeight: "700",
-                "@media (max-width:600px)": {
-                    fontSize: "32px",
+                "@media (max-width:1220px)": {
+                    fontSize: "42px",
                 },
             },
             h2: {
@@ -43,6 +56,9 @@ export const ThemeProvider = ({ children }) => {
             h3: {
                 fontSize: "24px",
                 fontWeight: "700",
+                "@media (max-width:1220px)": {
+                    fontSize: "18px",
+                },
                 "@media (max-width:600px)": {
                     fontSize: "14px",
                 },
@@ -50,6 +66,9 @@ export const ThemeProvider = ({ children }) => {
             h4: {
                 fontSize: "25px",
                 fontWeight: "400",
+                "@media (max-width:1220px)": {
+                    fontSize: "20px",
+                },
             },
             h5: {
                 fontSize: "20px",
@@ -58,6 +77,9 @@ export const ThemeProvider = ({ children }) => {
             h6: {
                 fontSize: "18px",
                 fontWeight: "400",
+                "@media (max-width:1220px)": {
+                    fontSize: "15px",
+                },
             },
             subtitle1: {
                 fontSize: "14px",

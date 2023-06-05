@@ -8,4 +8,5 @@
 a {
     text-decoration: none;
     line-height: 0;
+    color: inherit;
 }

@@ -11,6 +11,10 @@ function ConnectCard() {
                     display: "flex",
                     alignItems: "center",
                     padding: "10px",
+                    alignSelf: { xs: "flex-start", md: "unset" },
+
+                    order: { xs: 2, md: 1 },
+                    mb: { xs: 2 },
                 }}
             >
                 <Typography variant="h6" sx={{ px: 2 }}>
@@ -22,6 +26,7 @@ function ConnectCard() {
                         gap: "8px",
                         justifyContent: "center",
                         alignItems: "center",
+                        pr: 1,
                     }}
                 >
                     <a href="#">

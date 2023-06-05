@@ -7,12 +7,18 @@ import CopyCard from "../Cards/CopyCard";
 function Footer() {
     return (
         <>
-            <Container>
+            <Container maxWidth={"xl"}>
                 <Box
                     sx={{
                         display: "flex",
                         justifyContent: "space-between",
-                        pt: 30,
+                        pt: 22,
+                        alignItems: "center",
+                        pb: 2,
+                        "@media (max-width:1599px)": {
+                            pt: 30,
+                        },
+                        flexDirection: { xs: "column", md: "row" },
                     }}
                 >
                     <ConnectCard />

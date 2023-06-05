@@ -10,9 +10,11 @@ import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import SkipNextIcon from "@mui/icons-material/SkipNext";
 import { Button, Paper, Stack } from "@mui/material";
+import { ThemeContext } from "../../ThemeProvider";
 
 export default function MediaCard() {
     const theme = useTheme();
+    const { themeMode } = React.useContext(ThemeContext);
 
     return (
         <>
@@ -26,9 +28,11 @@ export default function MediaCard() {
                     alignItems: "flex-start",
                     textAlign: "center",
                     padding: "10px 20px",
+                    order: { xs: 1, md: 2 },
                     m: 1,
                     justifyContent: "space-around",
                     position: "relative",
+                    alignSelf: { xs: "flex-end", md: "unset" },
                 }}
             >
                 <Typography variant="h6" sx={{ px: 2 }}>
@@ -37,7 +41,15 @@ export default function MediaCard() {
 
                 <Stack flexDirection={"row"} sx={{ gap: "8px" }}>
                     {" "}
-                    <img src="/img/f_logo_1.svg" alt="" height={"24px"} />
+                    <img
+                        src={
+                            themeMode === "light"
+                                ? "/img/f_logo_1.svg"
+                                : "/img/f_logo_1D.svg"
+                        }
+                        alt=""
+                        height={"24px"}
+                    />
                     <img src="/img/f_logo_2.svg" alt="" height={"24px"} />
                 </Stack>
 
@@ -48,7 +60,7 @@ export default function MediaCard() {
                         right: "0px",
                         display: "flex",
                         maxWidth: "399px",
-                        minWidth: "375px",
+                        minWidth: "339px",
                         margin: "0 auto",
                         background: "rgba(255, 255, 255, 0.05)",
                         p: 2,
@@ -56,11 +68,23 @@ export default function MediaCard() {
                         backdropFilter: "blur(5px)",
                         borderRadius: "15px 15px 0px 15px;",
                         border: "1px solid",
-                        borderColor: theme === "light" ? "#fff" : "#373737",
+                        borderColor: theme.palette.borderColor,
                     }}
                 >
-                    <Box sx={{ display: "flex", flexDirection: "column" }}>
-                        <CardContent sx={{ flex: "1 0 auto" }}>
+                    <CardMedia
+                        component="img"
+                        sx={{ width: "143px", height: "143px" }}
+                        image="/img/MediaCard.svg"
+                        alt="MediaCard"
+                    />
+                    <Box
+                        sx={{
+                            display: "flex",
+                            flexDirection: "column",
+                            textAlign: "left",
+                        }}
+                    >
+                        <CardContent sx={{ flex: "1 0 auto", py: 0 }}>
                             <Typography component="div" variant="h5">
                                 News Headling will be this text..{" "}
                             </Typography>
@@ -84,12 +108,6 @@ export default function MediaCard() {
                             <Button variant="contained">More info</Button>
                         </Box>
                     </Box>
-                    <CardMedia
-                        component="img"
-                        sx={{ width: "143px", height: "143px" }}
-                        image="/img/MediaCard.png"
-                        alt="Live from space album cover"
-                    />
                 </Card>
             </Paper>
         </>

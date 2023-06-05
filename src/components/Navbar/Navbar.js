@@ -23,6 +23,7 @@ import logoLight from "./logo-l.png";
 import logoDark from "./logo-d.png";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
+import NightlightRoundOutlinedIcon from "@mui/icons-material/NightlightRoundOutlined";
 const drawerWidth = 240;
 const navItems = [
     {
@@ -32,6 +33,7 @@ const navItems = [
     {
         title: "NFT Marketplace",
         url: "/nft-marketplace",
+        bdg: "new",
     },
     {
         title: "How it Work",
@@ -52,7 +54,9 @@ function Navbar(props) {
             setLogo(logoDark);
         }
     }, [themeMode]);
-    console.log(location.pathname);
+
+    // console.log(location.pathname);
+
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -87,7 +91,12 @@ function Navbar(props) {
             <List>
                 {navItems.map((item) => (
                     <ListItem key={item.title} disablePadding>
-                        <ListItemButton sx={{ textAlign: "center" }}>
+                        <ListItemButton
+                            sx={{
+                                textAlign: "center",
+                                color: theme.palette.text,
+                            }}
+                        >
                             <ListItemText primary={item.title} />
                         </ListItemButton>
                     </ListItem>
@@ -98,33 +107,30 @@ function Navbar(props) {
 
     const container =
         window !== undefined ? () => window().document.body : undefined;
-
     return (
-        <Box sx={{ display: "flex", justifyContent: "center" }}>
+        <Box
+            sx={{
+                display: "flex",
+                justifyContent: "center",
+                overflowX: "hidden",
+            }}
+        >
             <CssBaseline />
             <AppBar
-                component="nav"
+                position="static"
                 sx={{
                     background: "transparent",
                     boxShadow: "0",
+                    color: "inherit",
                 }}
             >
-                <Container>
-                    <Toolbar>
-                        {location.pathname.includes("/admin") ? (
-                            ""
-                        ) : (
-                            <IconButton
-                                color="inherit"
-                                aria-label="open drawer"
-                                edge="start"
-                                onClick={handleOpenNavMenu}
-                                sx={{ mr: 2, display: { md: "none" } }}
-                            >
-                                <MenuIcon />
-                            </IconButton>
-                        )}
-
+                <Container maxWidth={"xl"}>
+                    <Toolbar
+                        sx={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                        }}
+                    >
                         <Menu
                             id="menu-appbar"
                             anchorEl={anchorElNav}
@@ -146,51 +152,50 @@ function Navbar(props) {
                             {navItems.map((data) => {
                                 return (
                                     <Link to={data.url}>
-                                        <MenuItem onClick={handleCloseNavMenu}>
+                                        <MenuItem
+                                            onClick={handleCloseNavMenu}
+                                            sx={{ color: theme.palette.text }}
+                                        >
                                             <Typography>
                                                 {data.title}
+                                                {data.bdg ? (
+                                                    <Typography
+                                                        component="span"
+                                                        sx={{
+                                                            backgroundColor:
+                                                                "#8D43F8",
+                                                            color: "#fff",
+                                                            padding: "5px 10px",
+                                                            margin: "5px",
+                                                            borderRadius: "5px",
+                                                        }}
+                                                    >
+                                                        {data.bdg}
+                                                    </Typography>
+                                                ) : (
+                                                    ""
+                                                )}
                                             </Typography>
                                         </MenuItem>
                                     </Link>
                                 );
                             })}
-
-                            {/* {pages.map((page) => (
-                                <MenuItem
-                                    key={page}
-                                    onClick={handleCloseNavMenu}
-                                >
-                                    <Typography textAlign="center">
-                                        {page}
-                                    </Typography>
-                                </MenuItem>
-                            ))} */}
                         </Menu>
-                        {/* <Typography
-              sx={{
-                flexGrow: 1,
-                display: { xs: "inline" },
-                fontWeight: "bold",
-                fontSize: "19px",
-                cursor: "pointer",
-              }}
-            >
-              VALV X
-            </Typography> */}
+
                         <Box
                             sx={{
-                                flexGrow: 1,
                                 display: { xs: "flex" },
                                 fontWeight: "bold",
                                 fontSize: "19px",
                                 cursor: "pointer",
                                 alignItems: "center",
                                 mt: 1,
+                                justifyContent: "space-between",
                             }}
                         >
                             <Link to="/">
                                 <img
-                                    style={{ height: "27px" }}
+                                    style={{ height: "140px" }}
                                     src={logo}
                                     alt="logo"
                                 />
@@ -202,44 +207,140 @@ function Navbar(props) {
                             <>
                                 <Box
                                     sx={{
-                                        display: { xs: "none", md: "block" },
+                                        display: { xs: "none", md: "flex" },
+                                        color: theme.palette.text,
+                                        flex: 1,
+                                        gap: "85px",
+                                        justifyContent: "center",
+                                        "@media (max-width:1220px)": {
+                                            gap: "20px",
+                                        },
                                     }}
                                 >
                                     {navItems.map((item) => (
                                         <Link to={item.url}>
-                                            <Button sx={{ color: "" }}>
-                                                <Typography>
+                                            <Button color="inherit" sx={{}}>
+                                                {" "}
+                                                <Typography
+                                                    variant="h4"
+                                                    sx={{
+                                                        textTransform:
+                                                            "capitalize",
+                                                    }}
+                                                >
                                                     {item.title}
+                                                    {item.bdg ? (
+                                                        <Typography
+                                                            component="span"
+                                                            sx={{
+                                                                backgroundColor:
+                                                                    "#8D43F8",
+                                                                color: "#fff",
+                                                                padding:
+                                                                    "5px 10px",
+                                                                margin: "5px",
+                                                                borderRadius:
+                                                                    "5px",
+                                                            }}
+                                                        >
+                                                            {item.bdg}
+                                                        </Typography>
+                                                    ) : (
+                                                        ""
+                                                    )}
                                                 </Typography>
                                             </Button>
                                         </Link>
                                     ))}
                                 </Box>
-
-                                <Button
-                                    variant="outlined"
+                                <Box
                                     sx={{
-                                        // border: "1px solid #fff",
-                                        width: "134px",
-                                        height: "40px",
-                                        fontSize: "14px",
-                                        ml: 2,
-                                        fontWeight: "400",
+                                        display: { xs: "flex" },
+                                        flexWrap: "wrap",
+                                        gap: "10px",
+                                        justifyContent: "center",
+                                        alignItems: "center",
                                     }}
                                 >
-                                    Get Started{" "}
-                                </Button>
-                                <IconButton
-                                    sx={{ ml: 1 }}
-                                    onClick={toggleTheme}
-                                    color="inherit"
-                                >
-                                    {theme.palette.mode === "dark" ? (
-                                        <Brightness7Icon />
-                                    ) : (
-                                        <Brightness4Icon />
-                                    )}
-                                </IconButton>
+                                    <Button
+                                        variant="outlined"
+                                        sx={{
+                                            height: "60px",
+                                            fontSize: "14px",
+                                            ml: 2,
+                                            fontWeight: "400",
+                                            border: "2px solid #6900FF",
+                                            color:
+                                                themeMode === "light"
+                                                    ? "#373737"
+                                                    : theme.palette.primary,
+                                            borderRadius: "30px",
+                                            "&:hover": {
+                                                border: "2px solid #6900FF",
+                                                background: "#6900FF",
+                                                color: "#ffffff",
+                                            },
+                                            "@media (max-width:600px)": {
+                                                height: "40px",
+                                            },
+                                        }}
+                                    >
+                                        <Typography
+                                            variant="h3"
+                                            sx={{
+                                                lineHeight: "120%",
+                                                mx: 2,
+                                            }}
+                                        >
+                                            Get Started
+                                        </Typography>
+                                        <img
+                                            src="/img/seven.svg"
+                                            alt=""
+                                            className="my-svg-img"
+                                        />
+                                    </Button>
+                                    <IconButton
+                                        sx={{
+                                            ml: 2,
+                                            width: "40px",
+
+                                            height: "40px",
+                                            background:
+                                                theme.palette.action.hover,
+                                        }}
+                                        onClick={toggleTheme}
+                                        color="inherit"
+                                    >
+                                        {theme.palette.mode === "dark" ? (
+                                            <Brightness7Icon />
+                                        ) : (
+                                            <NightlightRoundOutlinedIcon
+                                                color="secondary"
+                                                sx={{
+                                                    transform: "rotate(-45deg)",
+                                                }}
+                                            />
+                                        )}
+                                    </IconButton>
+                                    <IconButton
+                                        aria-label="open drawer"
+                                        edge="end"
+                                        onClick={handleOpenNavMenu}
+                                        sx={{
+                                            display: {
+                                                xs: "inline-flex",
+                                                md: "none",
+                                            },
+                                            width: "40px",
+
+                                            height: "40px",
+                                            ml: 2,
+                                        }}
+                                    >
+                                        <MenuIcon />
+                                    </IconButton>
+                                </Box>
                             </>
                         )}
                     </Toolbar>
@@ -260,6 +361,7 @@ function Navbar(props) {
                         "& .MuiDrawer-paper": {
                             boxSizing: "border-box",
                             width: drawerWidth,
+                            color: theme.palette.text,
                         },
                     }}
                 >
