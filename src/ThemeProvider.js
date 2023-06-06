@@ -6,7 +6,7 @@ import {
 export const ThemeContext = React.createContext();
 
 export const ThemeProvider = ({ children }) => {
-    const [themeMode, setThemeMode] = useState("light");
+    const [themeMode, setThemeMode] = useState("dark");
 
     const toggleTheme = () => {
         const newThemeMode = themeMode === "light" ? "dark" : "light";
@@ -19,7 +19,7 @@ export const ThemeProvider = ({ children }) => {
                 xs: 0,
                 sm: 600,
                 md: 1024,
-
+                lg: 1440,
                 xl: 1660,
             },
         },
@@ -42,7 +42,7 @@ export const ThemeProvider = ({ children }) => {
                 fontSize: "59px",
                 lineHeight: "120%",
                 fontWeight: "700",
-                "@media (max-width:1220px)": {
+                "@media (max-width:1440px)": {
                     fontSize: "42px",
                 },
             },
@@ -56,7 +56,7 @@ export const ThemeProvider = ({ children }) => {
             h3: {
                 fontSize: "24px",
                 fontWeight: "700",
-                "@media (max-width:1220px)": {
+                "@media (max-width:1440px)": {
                     fontSize: "18px",
                 },
                 "@media (max-width:600px)": {
@@ -66,7 +66,7 @@ export const ThemeProvider = ({ children }) => {
             h4: {
                 fontSize: "25px",
                 fontWeight: "400",
-                "@media (max-width:1220px)": {
+                "@media (max-width:1440px)": {
                     fontSize: "20px",
                 },
             },
@@ -77,7 +77,7 @@ export const ThemeProvider = ({ children }) => {
             h6: {
                 fontSize: "18px",
                 fontWeight: "400",
-                "@media (max-width:1220px)": {
+                "@media (max-width:1440px)": {
                     fontSize: "15px",
                 },
             },

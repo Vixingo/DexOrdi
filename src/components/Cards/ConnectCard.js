@@ -12,7 +12,6 @@ function ConnectCard() {
                     alignItems: "center",
                     padding: "10px",
                     alignSelf: { xs: "flex-start", md: "unset" },
-
                     order: { xs: 2, md: 1 },
                     mb: { xs: 2 },
                 }}
@@ -29,13 +28,17 @@ function ConnectCard() {
                         pr: 1,
                     }}
                 >
-                    <a href="#">
+                    <a
+                        href="https://twitter.com/dexordi"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         <img src="/img/con1.svg" alt="twitter" height="23px" />
                     </a>
-                    <a href="#">
+                    <a href="https://t.me/dexordi" target="_blank">
                         <img src="/img/con2.svg" alt="Tele" height="23px" />
                     </a>
-                    <a href="#">
+                    <a href="https://medium.com/@dexordi" target="_blank">
                         <img src="/img/con3.svg" alt="Medium" height="23px" />
                     </a>
                 </Stack>

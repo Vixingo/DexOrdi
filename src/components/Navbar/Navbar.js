@@ -219,7 +219,7 @@ function Navbar(props) {
                                 >
                                     {navItems.map((item) => (
                                         <Link to={item.url}>
-                                            <Button color="inherit" sx={{}}>
+                                            <Button color="inherit">
                                                 {" "}
                                                 <Typography
                                                     variant="h4"

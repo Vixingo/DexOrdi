@@ -46,14 +46,12 @@ function Hero() {
                                     }}
                                 >
                                     brc-20
-                                </Typography>{" "}
+                                </Typography>
                                 token standard
                             </Typography>
                             <Typography variant="h4" sx={{ pb: 5 }}>
-                                Lorem Ipsum is simply dummy text of the printing
-                                and typesetting industry. Lorem Ipsum has been
-                                the industry's standard dummy text ever since
-                                the 1500s
+                                Pioneering Role in Revolutionizing Decentralized
+                                Trading on the Bitcoin Network
                             </Typography>
                             <Stack direction="row" spacing={2}>
                                 <Button
@@ -63,17 +61,20 @@ function Hero() {
                                         borderRadius: "30px",
                                         display: "flex",
                                         alignItems: "center",
+                                        backgroundColor: "#6900FF",
+                                        ":hover": {
+                                            backgroundColor: "#6900FF",
+                                        },
                                     }}
                                 >
                                     <Typography
                                         variant="h3"
                                         sx={{
                                             lineHeight: "120%",
-
                                             mx: 2,
                                         }}
                                     >
-                                        Start Now{"   "}
+                                        Start Now
                                     </Typography>
                                     <KeyboardDoubleArrowRightRoundedIcon fontSize="large" />
                                 </Button>
