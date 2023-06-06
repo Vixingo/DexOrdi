@@ -78,37 +78,42 @@ function Hero() {
                                     </Typography>
                                     <KeyboardDoubleArrowRightRoundedIcon fontSize="large" />
                                 </Button>
-                                <Button
-                                    variant="outlined"
-                                    sx={{
-                                        height: "59px",
-                                        borderRadius: "30px",
-                                        border: "2px solid #6900FF",
-                                        color:
-                                            themeMode === "light"
-                                                ? "#373737"
-                                                : theme.palette.primary,
-                                        "&:hover": {
-                                            border: "2px solid #6900FF",
-                                            background: "#6900FF",
-                                            color: "#ffffff",
-                                        },
-                                    }}
+                                <a
+                                    href="https://t.co/dkMcKf3HAM"
+                                    target="_blank"
                                 >
-                                    <Typography
-                                        variant="h3"
+                                    <Button
+                                        variant="outlined"
                                         sx={{
-                                            lineHeight: "120%",
-                                            mx: 2,
+                                            height: "59px",
+                                            borderRadius: "30px",
+                                            border: "2px solid #6900FF",
+                                            color:
+                                                themeMode === "light"
+                                                    ? "#373737"
+                                                    : theme.palette.primary,
+                                            "&:hover": {
+                                                border: "2px solid #6900FF",
+                                                background: "#6900FF",
+                                                color: "#ffffff",
+                                            },
                                         }}
                                     >
-                                        Get Whitelisted
-                                    </Typography>{" "}
-                                    <FavoriteRoundedIcon
-                                        fontSize="large"
-                                        px={5}
-                                    />
-                                </Button>
+                                        <Typography
+                                            variant="h3"
+                                            sx={{
+                                                lineHeight: "120%",
+                                                mx: 2,
+                                            }}
+                                        >
+                                            Get Whitelisted
+                                        </Typography>{" "}
+                                        <FavoriteRoundedIcon
+                                            fontSize="large"
+                                            px={5}
+                                        />
+                                    </Button>
+                                </a>
                             </Stack>
                         </Box>
                     </Grid>

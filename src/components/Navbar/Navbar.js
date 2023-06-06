@@ -32,12 +32,12 @@ const navItems = [
     },
     {
         title: "NFT Marketplace",
-        url: "/nft-marketplace",
+        url: "/",
         bdg: "new",
     },
     {
         title: "How it Work",
-        url: "/how-it-works",
+        url: "/",
     },
 ];
 

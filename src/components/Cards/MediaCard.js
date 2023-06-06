@@ -41,15 +41,20 @@ export default function MediaCard() {
 
                 <Stack flexDirection={"row"} sx={{ gap: "8px" }}>
                     {" "}
-                    <img
-                        src={
-                            themeMode === "light"
-                                ? "/img/f_logo_1.svg"
-                                : "/img/f_logo_1D.svg"
-                        }
-                        alt=""
-                        height={"24px"}
-                    />
+                    <a
+                        href="https://www.marketwatch.com/press-release/automated-market-maker-dao-based-on-brc-20-protocol-launched-by-dexordi-2023-06-06?mod=search_headline"
+                        target="_blank"
+                    >
+                        <img
+                            src={
+                                themeMode === "light"
+                                    ? "/img/f_logo_1.svg"
+                                    : "/img/f_logo_1D.svg"
+                            }
+                            alt=""
+                            height={"24px"}
+                        />
+                    </a>
                     <img src="/img/f_logo_2.svg" alt="" height={"24px"} />
                 </Stack>
 
