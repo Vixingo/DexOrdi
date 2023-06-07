@@ -79,7 +79,7 @@ export default function MediaCard() {
                     <CardMedia
                         component="img"
                         sx={{ width: "143px", height: "143px" }}
-                        image="/img/MediaCard.svg"
+                        image="https://www.coinprwire.com/assets/uploads/pr_listing_image/06062023094512_500335_brc.jpg"
                         alt="MediaCard"
                     />
                     <Box
@@ -91,15 +91,14 @@ export default function MediaCard() {
                     >
                         <CardContent sx={{ flex: "1 0 auto", py: 0 }}>
                             <Typography component="div" variant="h5">
-                                News Headling will be this text..{" "}
+                                Automated Market Maker & DAO based{" "}
                             </Typography>
                             <Typography
                                 variant="subtitle1"
                                 color="text.secondary"
                                 component="div"
                             >
-                                News element is here and Headling will be this
-                                text...{" "}
+                                on BRC-20 Protocol Launched by DexOrdi
                             </Typography>
                         </CardContent>
                         <Box
@@ -110,7 +109,13 @@ export default function MediaCard() {
                                 pb: 1,
                             }}
                         >
-                            <Button variant="contained">More info</Button>
+                            <a
+                                href="https://www.marketwatch.com/press-release/automated-market-maker-dao-based-on-brc-20-protocol-launched-by-dexordi-2023-06-06?mod=search_headline"
+                                target="_blank"
+                            >
+                                {" "}
+                                <Button variant="contained">More info</Button>
+                            </a>
                         </Box>
                     </Box>
                 </Card>
